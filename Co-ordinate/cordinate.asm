@@ -1,0 +1,74 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+FIRST DB '1ST COORDINATE$'
+SECOND DB '2ND COORDINATE$'
+THIRD DB '3RD COORDINATE$'
+FOURTH DB '4TH COORDINATE$'
+
+.CODE
+MAIN PROC
+    
+    
+    MOV AX,@DATA
+    MOV DS,AX         ;INITIALIZE THE DATA SECTION
+    
+    MOV AH,1
+    INT 21H
+    MOV BL,AL
+    INT 21H
+    MOV BH,AL
+    
+    CMP BL,43
+    JE BL_IS_POSITIVE
+    
+    ;THESE ARE FOR BL IS NEGATIVE
+    
+    CMP BH,43
+    JE BL_IS_NEG_BH_IS_POS
+    
+    ;BL AND BH BOTH ARE NEGATIVE
+    
+    MOV AH,9
+    LEA DX,THIRD
+    INT 21H
+    JMP EXIT 
+    
+    
+    BL_IS_NEG_BH_IS_POS:
+    
+    MOV AH,9
+    LEA DX,SECOND
+    INT 21H
+    JMP EXIT
+    
+    
+    
+    
+    ;THESE ARE FOR BL IS POSITIVE
+    BL_IS_POSITIVE:
+   
+    CMP BH,43
+    JE BH_BL_BOTH_ARE_POSITIVE
+    
+    MOV AH,9
+    LEA DX,FOURTH
+    INT 21H
+    JMP EXIT 
+    
+    BH_BL_BOTH_ARE_POSITIVE:
+    
+    MOV AH,9
+    LEA DX,FIRST
+    INT 21H
+    JMP EXIT
+     
+     
+     
+     EXIT:
+     
+     MOV AH,4CH
+     INT 21H
+     
+     MAIN ENDP
+END MAIN
