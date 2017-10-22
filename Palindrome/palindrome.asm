@@ -1,23 +1,91 @@
 .model small
 .stack 100h
+.data
+
+n1 dw ?
+n2 dw ?
+d dw 10
+
+
 
 .code
 
 main proc
           
           
-      
+          mov ax,@data
+          mov ds,ax
+                  
+          
+          call input_int 
           
           
-          call input_int
+          mov n1 ,ax
+           
+          and n2,0    ; total = 0 
           
-          call newline
-          call print_int 
+          
+          
+          
+          
+          loop1:
+          
+          and dx,0 
+          div d
+          push ax
+          
+          mov ax,n2
+          
+          push dx
+          
+          mul d
+          
+          mov n2,ax
+          
+          pop dx             
+          
+          add n2,dx
+          
+          pop ax
+          
+          cmp ax,0
+          jne loop1
+          
+          call newline 
+           
+           
+           
+         mov ax,n2
+         
+         cmp ax,n1
+         
+         jne not_pal
+         
+           mov ah,2
+           mov dl,'P'
+           int 21h
+           
+           
+           
+          
+           
+        jmp exit  
+          
+          
+          not_pal:
+          
+          
+          mov ah,2
+          mov dl,'N'
+          int 21h
+          
+          
+          ;call print_int 
            
            
            
            
-           
+          exit: 
            
            mov ah,4ch
            int 21h

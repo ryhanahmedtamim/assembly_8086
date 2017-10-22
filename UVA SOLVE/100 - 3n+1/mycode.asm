@@ -275,19 +275,8 @@ main proc
       AND R,0
       AND TEMP,0
       AND N,0 
-    
-    
-    
-     
-     
-    JMP INPUT1    
-        
-        
-        
-        
-        
-        
-        
+
+    JMP INPUT1           
     main endp
 
     print_newline proc

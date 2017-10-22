@@ -1,24 +1,81 @@
 .model small
 .stack 100h
+.data
+n2 dw 2
+
+n1 dw ? 
+prime db 'Prime$'
+not_prime db 'Not Prime $'
 
 .code
 
 main proc
           
-          
-      
-          
+         mov ax,@data
+         mov ds,ax
+         
           
           call input_int
+         
+           mov n1,ax ; the input is in n1
+           mov bx,n1
+           
+           
+           
+           
+           
+           loop1:
+           
+           mov dx,0
+           
+           
+           div n2
+           
+           cmp dx,0
+           
+           je NOT_PRIMEL
+            
+           mov ax,n1
+           
+           inc n2
+           
+           cmp n2,ax
+           jne loop1
+          
+          call newline 
+          
+          primeL:
+          
+          mov ah,9
+          lea dx,prime
+          int 21h
+          
+          jmp exit
+          
+          
+          NOT_PRIMEL:
           
           call newline
-          call print_int 
+          
+          mov ax,0
+          mov dx,0
+          
+          mov ah,9
+          lea dx,not_prime
+          int 21h
+                 
+          
+          
+          
+          
+          
+          ;;call print_int 
            
            
            
            
            
-           
+           exit:
            mov ah,4ch
            int 21h
     
