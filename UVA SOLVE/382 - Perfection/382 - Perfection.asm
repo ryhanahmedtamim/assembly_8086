@@ -180,29 +180,7 @@ MAIN PROC
     MOV AH,4CH
     INT 21H
     
-   MAIN ENDP
-    
-    ;NEWLINE PROC
-;        
-;        PUSH AX
-;        PUSH DX
-;        
-;        
-;        MOV AH,2
-;        MOV DL,0DH
-;        INT 21H
-;        MOV DL,0AH
-;        INT 21H
-;        
-;        POP DX
-;        POP AX
-;        
-;        
-;        RET
-;        
-;        NEWLINE ENDP
-;    END NEWLINE
-    
+   MAIN ENDP 
     
 
 END MAIN

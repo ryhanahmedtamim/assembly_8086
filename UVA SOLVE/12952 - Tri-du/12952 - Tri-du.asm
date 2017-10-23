@@ -1,44 +1,35 @@
-;10079 - Pizza Cutting
+;12952 - Tri-du
 .model small
 .stack 100h
-
 .code
 
 main proc
           
-          loop1:
-          call input_int ; n
           
-          mov bx,ax
-          
-          or bx,bx
-          jl exit
-          
-          mov bx,ax
-          
-          inc bx ; bx++ ; n+1
-          
-          and dx,0
-          
-          mul bx  ;   n(n+1)
-          
-          mov bl,2
-          
-          div bl ; n(n+1)/2
-          
-          inc ax ; (n(n+1)/2)+1
-          
-          
-          call newline
-          call print_int
-          call newline 
+        loop1:
+        
+        call input_int
+        mov bx,ax ; a
+        call input_int
          
-         jmp loop1 
+        call newline
+        
+        cmp ax,bx
+        jg print_ax
+        
+        mov ax,bx ;  ax=bx
+        
+        print_ax:
+        
+       call print_int
+     
+        
+        call newline
+        
+        
+        jmp loop1
+
            
-           
-           
-           
-           exit:
            mov ah,4ch
            int 21h
     

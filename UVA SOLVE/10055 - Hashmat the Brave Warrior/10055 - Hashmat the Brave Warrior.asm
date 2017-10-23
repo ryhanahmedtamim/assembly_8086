@@ -69,10 +69,7 @@ MAIN PROC
         INT 21H
         
      JMP LOOP
-     
-                  
-    
-    
+  
     MOV AH,4CH
     INT 21H
     
