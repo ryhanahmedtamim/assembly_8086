@@ -6,11 +6,15 @@ a dw 100 dup(?)
 s dw ?
 r dw ?
 ans dw ?
+case1 db 'Set #$'
+case2 db 'The minimum number of moves is $'
+case dw 1
 n dw ?
 .code
 
 main proc
-      
+      mov ax,@data
+      mov ds,ax
       loop1:
           call input_int
           cmp ax,0
@@ -46,8 +50,17 @@ main proc
               add si,2
               cmp bx,n
          jne loop3
-              mov ax,ans
               call newline
+              mov ah,9
+              lea dx,case1
+              int 21h
+              mov ax,case
+              call print_int
+              call newline
+              mov ah,9
+              lea dx,case2
+              int 21h
+              mov ax,ans
               call print_int
               call newline
           
