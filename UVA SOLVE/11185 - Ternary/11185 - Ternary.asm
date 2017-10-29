@@ -28,12 +28,12 @@ main proc
         add si,2
       cmp ax,0
       jne loop2
-      mov si,0
+      sub si,2
       loop3:
         mov ax,a[si]        
         call print_int
-        add si,2
-        cmp a[si],-1
+        sub si,2
+        cmp si,-2
       jne loop3
       call newline      
    jmp loop1
