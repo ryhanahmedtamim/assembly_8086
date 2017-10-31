@@ -6,7 +6,6 @@ d1 dw 10
 d2 dw 9
 n dw ?
 .code
-
 main proc
     mov ax,@data
     mov ds,ax 

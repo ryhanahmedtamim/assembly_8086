@@ -10,13 +10,11 @@ temp dw ?
 ans dw ?
 case db 'Minimum exchange operations : $'
 .code
-
 main proc
     mov ax,@data
     mov ds,ax
     
-    loop1:
-    
+    loop1:    
         call input_int
         mov n,ax       ; for input n 
         call newline

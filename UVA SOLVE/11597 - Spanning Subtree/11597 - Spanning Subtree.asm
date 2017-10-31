@@ -10,8 +10,7 @@ main proc
     mov ax,@data
     mov ds,ax
     
-    call input_int ; n= ax
-          
+    call input_int ; n= ax          
     loop1:
        cmp ax,0
        je exit
@@ -38,8 +37,8 @@ main proc
     jmp loop1
         
     exit:
-          mov ah,4ch
-          int 21h
+        mov ah,4ch
+        int 21h
     
     main endp
 

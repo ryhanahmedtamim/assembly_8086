@@ -7,10 +7,7 @@ t dw ?
 caseNumber dw 49
 N dw ?
 max dw ? 
-
-
 .code
-
 main proc
     mov ax,@data
     mov ds,ax

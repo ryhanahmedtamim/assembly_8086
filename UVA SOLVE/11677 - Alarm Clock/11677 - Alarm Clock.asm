@@ -7,9 +7,7 @@ h2 dw ?
 m1 dw ?
 m2 dw ?
 hour dw 60
-
 .code
-
 main proc
        mov ax,@data
        mov ds,ax

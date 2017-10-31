@@ -3,7 +3,7 @@
 .model small
 .stack 100h
 .data
-a db dup(-1)
+a db 100 dup(-1)
 .code
 
 main proc
@@ -31,12 +31,9 @@ main proc
             int 21h
             inc si ;si++
             cmp a[si],13
-          jne loop3
-          
-          call newline  
-            
-     jmp loop1
-    
+          jne loop3          
+          call newline              
+     jmp loop1    
     exit:
     mov ah,4ch
     int 21h

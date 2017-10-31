@@ -10,7 +10,6 @@ p dw ?
 m1 dw 60
 d1 dw 3
 .code
-
 main proc
     
     mov ax,@data

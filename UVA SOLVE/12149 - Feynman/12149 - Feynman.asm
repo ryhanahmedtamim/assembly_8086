@@ -8,7 +8,6 @@ n3 dw ?
 d dw 2
 d2 dw 6  
 .code
-
 main proc
    
      mov ax,@data

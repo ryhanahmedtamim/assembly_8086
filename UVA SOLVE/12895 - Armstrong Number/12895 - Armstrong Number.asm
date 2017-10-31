@@ -11,7 +11,6 @@ m dw ?
 Ar db 'Armstrong$'
 not_ar db 'Not Armstrong$'
 .code
-
 main proc
           
       mov ax,@data
@@ -162,7 +161,6 @@ main proc
            pop dx
            pop ax                   
           ret 
-          newline endp
-        
+          newline endp        
         
 end main

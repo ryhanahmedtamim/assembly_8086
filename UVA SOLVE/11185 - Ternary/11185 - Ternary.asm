@@ -6,7 +6,6 @@ a dw 100 dup(-1)
 n dw ?
 d dw 3
 .code
-
 main proc
      mov ax,@data
      mov ds,ax     

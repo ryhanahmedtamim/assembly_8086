@@ -5,7 +5,6 @@
 t dw ?
 n dw ?
 .code
-
 main proc
        mov ax,@data
        mov ds,ax

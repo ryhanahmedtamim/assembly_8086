@@ -9,7 +9,6 @@ case1 db 'The parity of $'
 case2 db '  is $'
 case3 db ' (mod 2).$'
 .code
-
 main proc
      mov ax,@data
      mov ds,ax     

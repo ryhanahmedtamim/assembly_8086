@@ -26,8 +26,7 @@ main proc
                  mov ax,dx ; ax = ax%k
                  add ax,t
                  cmp k,ax
-             jl loop2
-             
+             jl loop2             
              call newline
              mov ax,s
              add ax,n ; s+=n

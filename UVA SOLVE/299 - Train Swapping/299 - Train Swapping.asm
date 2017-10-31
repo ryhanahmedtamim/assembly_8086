@@ -12,7 +12,6 @@ case db 'Optimal train swapping takes $'
 case2 db ' swaps.$'
 t dw ?
 .code
-
 main proc
     mov ax,@data
     mov ds,ax

@@ -11,7 +11,6 @@ case2 db 'The minimum number of moves is $'
 case dw 1
 n dw ?
 .code
-
 main proc
       mov ax,@data
       mov ds,ax

@@ -20,12 +20,9 @@ main proc
             mov a[si],al  ; s[i] = al, taking the character
             inc si     ; si++
             cmp al,13
-          jne loop2
-          
+          jne loop2          
           call newline
-          mov si,0
-          
-          
+          mov si,0                  
           loop3:
             ;printing the characters
             cmp a[si],'"'
@@ -33,8 +30,7 @@ main proc
                 inc count
                 ;for division    
                 mov ax,count
-                div d
-                
+                div d                
                 cmp ah,0
                 jne print_cout
                     mov ah,2
@@ -71,14 +67,12 @@ main proc
     
     newline proc
            push ax
-           push dx
-           
+           push dx           
            mov ah,2
            mov dl,0ah
            int 21h
            mov dl,0dh
-           int 21h
-           
+           int 21h          
            pop dx
            pop ax                   
           ret 

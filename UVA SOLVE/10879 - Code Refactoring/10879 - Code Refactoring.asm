@@ -97,9 +97,7 @@ main proc
          int 21h
          mov ax,a[si+6]
          call print_int
-         call newline
-         
-         
+         call newline                 
          inc casenumber ; casenumber++
          mov ax,t
          cmp casenumber,ax
